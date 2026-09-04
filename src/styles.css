@@ -182,6 +182,8 @@
 
 .about-heading .eyebrow{font:400 18px/1.1 Geist,sans-serif;letter-spacing:-.015em;text-transform:none}
 .about-heading .eyebrow:before{width:6px;height:6px}
+.about-heading{display:block;margin-bottom:44px}
+.about-heading .eyebrow{margin:0}
 
 .footer-logo{display:block;width:112px;height:132px;margin-bottom:14px;position:relative}
 .footer-logo img{display:block;width:100%;height:100%;object-fit:contain}
