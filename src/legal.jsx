@@ -1,5 +1,3 @@
-import React from 'react';
-
 const contact = <><strong>Employ AI, an S corporation, doing business as The Blue Dot Agency</strong><br/>Las Vegas, Nevada<br/>Phone: <a href="tel:+17022921451">702-292-1451</a><br/>Email: <a href="mailto:team@thebluedotagency.com">team@thebluedotagency.com</a></>;
 const Section = ({title, children}) => <section><h2>{title}</h2>{children}</section>;
 const Bullets = ({children}) => <ul>{children}</ul>;
@@ -37,4 +35,4 @@ function Terms(){return <>
   <Section title="11. Contact"><p>Questions about these terms may be directed to:</p><p>{contact}</p></Section>
 </>}
 
-export function LegalPage({type}){const privacy=type==='privacy';return <div className="legal-page"><header className="legal-header"><a href="/" aria-label="Blue Dot Agency home"><img src="/assets/blue-dot/blue-dot-logo-exact.png" alt="The Blue Dot Agency"/></a><a href="/">Return to website</a></header><main className="legal-content"><p className="legal-draft">Working draft for lawyer review. Not approved legal advice.</p>{privacy?<PrivacyPolicy/>:<Terms/>}</main><footer className="legal-footer"><span>© 2026 The Blue Dot Agency</span><nav><a href="/?legal=privacy">Privacy Policy</a><a href="/?legal=terms">Terms of Service</a></nav></footer></div>}
+export function LegalPage({type}){const privacy=type==='privacy';return <div className="legal-page"><header className="legal-header"><a href="/" aria-label="Blue Dot Agency home"><img src="/assets/blue-dot/blue-dot-logo-exact.png" alt="The Blue Dot Agency"/></a><a href="/">Return to website</a></header><main className="legal-content"><p className="legal-draft">Working draft for lawyer review. Not approved legal advice.</p>{privacy?<PrivacyPolicy/>:<Terms/>}</main><footer className="legal-footer"><span>© 2026 The Blue Dot Agency</span><nav><a href="/privacy-policy">Privacy Policy</a><a href="/terms-and-conditions">Terms of Service</a></nav></footer></div>}

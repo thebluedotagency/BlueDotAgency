@@ -1,0 +1,9 @@
+{
+  "name": "blue-dot-agency-website",
+  "compatibility_date": "2026-09-04",
+  "main": "server/index.js",
+  "assets": {
+    "directory": "./dist",
+    "binding": "ASSETS"
+  }
+}
