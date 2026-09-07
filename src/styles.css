@@ -75,6 +75,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--blue);outline-offse
   .site-header{grid-template-columns:1fr auto}
   .menu{display:block}
   .site-header nav{display:none;position:absolute;top:68px;left:0;right:0;padding:28px 32px;flex-direction:column;background:var(--gray)}
+  .site-header nav.open{display:flex}
   .header-cta{display:none}
   .hero-thesis{width:390px}
   .intro{grid-template-columns:1fr;padding:120px 32px}
