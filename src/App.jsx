@@ -8,15 +8,16 @@ import {Statement} from './components/Statement.jsx';
 import {About} from './components/About.jsx';
 import {Faq} from './components/Faq.jsx';
 import {Contact} from './components/Contact.jsx';
+import {Newsletter} from './components/Newsletter.jsx';
 import {Footer} from './components/Footer.jsx';
 
 export function App() {
   useEffect(() => {
     const observer = new IntersectionObserver(
-      entries => entries.forEach(entry => entry.isIntersecting && entry.target.classList.add('seen')),
+      (entries) => entries.forEach((entry) => entry.isIntersecting && entry.target.classList.add('seen')),
       {threshold: 0.12},
     );
-    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+    document.querySelectorAll('.reveal').forEach((el) => observer.observe(el));
     return () => observer.disconnect();
   }, []);
 
@@ -35,6 +36,7 @@ export function App() {
         <About />
         <Faq />
         <Contact />
+        <Newsletter />
       </main>
       <Footer />
     </>

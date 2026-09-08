@@ -21,6 +21,7 @@ export function Footer() {
               {label}
             </a>
           ))}
+          <a href="#newsletter">Newsletter</a>
           <a href="/privacy-policy">Privacy Policy</a>
           <a href="/terms-and-conditions">Terms of Service</a>
         </div>

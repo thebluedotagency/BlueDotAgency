@@ -422,3 +422,76 @@ footer{grid-template-columns:minmax(0,2fr) minmax(180px,1fr) minmax(220px,1fr)}
   .intro,.sprint-heading,.sprint-detail,.post-sprint,.work-heading,.case-grid,.about-heading,.founders-grid,.faq{width:calc(100% - 40px)}
   .statement,.contact,footer{padding-left:20px;padding-right:20px}
 }
+
+
+.newsletter {
+  padding: 100px max(6vw, 24px);
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 64px;
+  background: #f4f0e7;
+  color: #071723;
+  scroll-margin-top: 110px;
+}
+.newsletter h2 {
+  font-size: clamp(36px, 4vw, 62px);
+  line-height: 1.08;
+  letter-spacing: -0.035em;
+  margin: 0 0 26px;
+}
+.newsletter p {
+  max-width: 580px;
+  line-height: 1.7;
+}
+.newsletter a {
+  color: inherit;
+  text-decoration: underline;
+}
+.newsletter-signup {
+  align-self: center;
+  background: white;
+  padding: 28px;
+  border-radius: 20px;
+  min-width: 0;
+}
+.newsletter-signup h3 {
+  font-size: 26px;
+  margin: 0 0 18px;
+}
+.newsletter .newsletter-small {
+  font-size: 13px;
+  line-height: 1.6;
+}
+.newsletter .primary-button {
+  cursor: pointer;
+  font: inherit;
+  border: 0;
+  background: #173dde;
+  color: white;
+  padding: 16px 24px;
+  border-radius: 30px;
+}
+.newsletter-form {
+  width: 100%;
+  height: 556px;
+  border: 0;
+  display: block;
+}
+.newsletter button:focus-visible,
+.newsletter a:focus-visible {
+  outline: 3px solid #173dde;
+  outline-offset: 5px;
+}
+@media (max-width: 700px) {
+  .newsletter {
+    grid-template-columns: 1fr;
+    gap: 24px;
+    padding: 64px 24px;
+  }
+  .newsletter-signup {
+    padding: 16px;
+  }
+  .newsletter-form {
+    height: 600px;
+  }
+}
