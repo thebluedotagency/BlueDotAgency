@@ -10,9 +10,6 @@ export function Footer() {
             <img src="/assets/blue-dot/blue-dot-logo-footer.png" alt="The Blue Dot Agency" />
           </a>
           <p>Marketing activation for founder-led businesses.</p>
-          <p className="ai-disclosure">
-            Website chat uses AI-assisted automation. Do not share sensitive or emergency information.
-          </p>
         </div>
         <div>
           <p className="eyebrow">Explore</p>
