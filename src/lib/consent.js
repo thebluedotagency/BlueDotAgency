@@ -36,12 +36,4 @@ export function loadOptionalServices() {
   clarity.src = 'https://www.clarity.ms/tag/wyjpq0d5cc';
   clarity.dataset.blueDotOptional = 'true';
   document.head.appendChild(clarity);
-
-  const chat = document.createElement('script');
-  chat.src = 'https://widgets.leadconnectorhq.com/loader.js';
-  chat.dataset.resourcesUrl = 'https://widgets.leadconnectorhq.com/chat-widget/loader.js';
-  chat.dataset.widgetId = '6a14a7a99f66529db32f1ba2';
-  chat.dataset.source = 'WEBSITE';
-  chat.dataset.blueDotOptional = 'true';
-  document.body.appendChild(chat);
 }

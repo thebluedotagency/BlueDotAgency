@@ -26,13 +26,13 @@ export function PrivacyChoices() {
           <div>
             <strong>Your privacy choice</strong>
             <p>
-              We use essential hosting and security technology. With your permission, we also load analytics and an
-              AI-assisted chat. You can use the website and booking links without them.
+              We use essential hosting and security technology. With your permission, we also load analytics.
+              You can use the website and booking links without analytics.
             </p>
             <div>
               <button onClick={() => choose('essential')}>Essential only</button>
               <button className="consent-allow" onClick={() => choose('allow')}>
-                Allow analytics and chat
+                Allow analytics
               </button>
             </div>
             <a href="/privacy-policy">Read Privacy Policy</a>
