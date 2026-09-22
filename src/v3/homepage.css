@@ -23,7 +23,6 @@
   z-index: -1;
   background: #101010;
   /* Bright, natural color shared by the footage and fallback poster. */
-  filter: brightness(1.18) saturate(1.18) contrast(1.08);
   pointer-events: none;
 }
 .home-fixed-media img,
@@ -33,6 +32,28 @@
   height: 100%;
   object-fit: cover;
   object-position: center;
+  filter: brightness(1.18) saturate(1.18) contrast(1.08);
+}
+.home-fixed-media video {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+}
+.home-fixed-media video.is-playing {
+  opacity: 1;
+}
+.home-video-play {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  z-index: 25;
+  padding: 12px 16px;
+  border: 1px solid #fff;
+  border-radius: 24px;
+  background: #111;
+  color: #fff;
+  font: inherit;
+  cursor: pointer;
 }
 .home-fixed-media:after {
   content: '';
@@ -424,7 +445,8 @@
   .home-work-card h2 {
     font-size: 32px;
   }
-  .home-fixed-media img {
+  .home-fixed-media img,
+  .home-fixed-media video {
     object-position: 60% center;
   }
 }
@@ -433,13 +455,9 @@
   .home-services summary span {
     transition: none;
   }
-  .home-fixed-media video {
+  .home-fixed-media video,
+  .home-video-play {
     display: none;
-  }
-  .home-fixed-media {
-    background-image: url('/assets/blue-dot/blue-dot-hero-poster.jpg');
-    background-size: cover;
-    background-position: center;
   }
 }
 

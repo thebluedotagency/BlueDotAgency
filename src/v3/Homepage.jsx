@@ -79,18 +79,88 @@ export function HomeNavigation() {
   );
 }
 
-export function Homepage() {
+function HeroBackground() {
+  const videoRef = useRef(null);
+  const [playing, setPlaying] = useState(false);
+  const [blocked, setBlocked] = useState(false);
+
+  useEffect(() => {
+    const video = videoRef.current;
+    const motion = window.matchMedia('(prefers-reduced-motion: reduce)');
+    let disposed = false;
+    const attempt = () => {
+      if (motion.matches || document.hidden) return;
+      video.defaultMuted = true;
+      video.muted = true;
+      video.play().catch(() => {
+        if (!disposed) setBlocked(true);
+      });
+    };
+    const updateMotion = () => {
+      if (motion.matches) video.pause();
+      else attempt();
+    };
+    video.addEventListener('canplay', attempt);
+    document.addEventListener('visibilitychange', attempt);
+    window.addEventListener('pageshow', attempt);
+    motion.addEventListener('change', updateMotion);
+    attempt();
+    return () => {
+      disposed = true;
+      video.removeEventListener('canplay', attempt);
+      document.removeEventListener('visibilitychange', attempt);
+      window.removeEventListener('pageshow', attempt);
+      motion.removeEventListener('change', updateMotion);
+    };
+  }, []);
+
+  const play = () => {
+    const video = videoRef.current;
+    video.muted = true;
+    video.play().catch(() => setBlocked(true));
+  };
+
   return (
     <>
       <div className="home-fixed-media" aria-hidden="true">
-        {heroMedia.video ? (
-          <video autoPlay muted loop playsInline preload="metadata" poster={heroMedia.poster}>
-            <source src={heroMedia.video} type="video/mp4" />
-          </video>
-        ) : (
-          <img src={heroMedia.poster} alt="" width="1920" height="1080" fetchPriority="high" />
-        )}
+        <img src={heroMedia.poster} alt="" width="1920" height="1080" fetchPriority="high" />
+        <video
+          ref={videoRef}
+          className={playing ? 'is-playing' : ''}
+          autoPlay
+          muted
+          loop
+          playsInline
+          preload="auto"
+          onPlaying={() => {
+            setPlaying(true);
+            setBlocked(false);
+          }}
+          onPause={() => {
+            setPlaying(false);
+            setBlocked(true);
+          }}
+          onError={() => {
+            setPlaying(false);
+            setBlocked(true);
+          }}
+        >
+          <source src={heroMedia.video} type="video/mp4" />
+        </video>
       </div>
+      {blocked && (
+        <button className="home-video-play" type="button" onClick={play}>
+          Play background video
+        </button>
+      )}
+    </>
+  );
+}
+
+export function Homepage() {
+  return (
+    <>
+      <HeroBackground />
       <section className="home-opening">
         <h1>
           Build around
