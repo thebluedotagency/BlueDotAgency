@@ -37,10 +37,6 @@
 .home-fixed-media video {
   position: absolute;
   inset: 0;
-  opacity: 0;
-}
-.home-fixed-media video.is-playing {
-  opacity: 1;
 }
 .home-video-play {
   position: fixed;
@@ -454,10 +450,6 @@
   .home-menu-toggle span,
   .home-services summary span {
     transition: none;
-  }
-  .home-fixed-media video,
-  .home-video-play {
-    display: none;
   }
 }
 

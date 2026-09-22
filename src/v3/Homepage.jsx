@@ -6,6 +6,7 @@ import './homepage.css';
 const heroMedia = {
   poster: '/assets/blue-dot/blue-dot-hero-poster.jpg',
   video: '/assets/blue-dot/blue-dot-hero-extended-web.mp4',
+  mobile: '/assets/blue-dot/blue-dot-hero-mobile-v2.mp4',
 };
 
 export function HomeNavigation() {
@@ -82,23 +83,29 @@ export function HomeNavigation() {
 function HeroBackground() {
   const videoRef = useRef(null);
   const [playing, setPlaying] = useState(false);
-  const [blocked, setBlocked] = useState(false);
+  const manualPlayback = useRef(false);
 
   useEffect(() => {
     const video = videoRef.current;
     const motion = window.matchMedia('(prefers-reduced-motion: reduce)');
+    video.src = window.matchMedia('(max-width: 767px)').matches ? heroMedia.mobile : heroMedia.video;
+    video.defaultMuted = true;
+    video.muted = true;
+    video.load();
     let disposed = false;
     const attempt = () => {
-      if (motion.matches || document.hidden) return;
+      if ((motion.matches && !manualPlayback.current) || document.hidden) return;
       video.defaultMuted = true;
       video.muted = true;
       video.play().catch(() => {
-        if (!disposed) setBlocked(true);
+        if (!disposed) setPlaying(false);
       });
     };
     const updateMotion = () => {
-      if (motion.matches) video.pause();
-      else attempt();
+      if (motion.matches) {
+        manualPlayback.current = false;
+        video.pause();
+      } else attempt();
     };
     video.addEventListener('canplay', attempt);
     document.addEventListener('visibilitychange', attempt);
@@ -116,8 +123,10 @@ function HeroBackground() {
 
   const play = () => {
     const video = videoRef.current;
+    manualPlayback.current = true;
     video.muted = true;
-    video.play().catch(() => setBlocked(true));
+    if (video.error) video.load();
+    video.play().catch(() => setPlaying(false));
   };
 
   return (
@@ -127,28 +136,23 @@ function HeroBackground() {
         <video
           ref={videoRef}
           className={playing ? 'is-playing' : ''}
-          autoPlay
+          poster={heroMedia.poster}
           muted
           loop
           playsInline
           preload="auto"
           onPlaying={() => {
             setPlaying(true);
-            setBlocked(false);
           }}
           onPause={() => {
             setPlaying(false);
-            setBlocked(true);
           }}
           onError={() => {
             setPlaying(false);
-            setBlocked(true);
           }}
-        >
-          <source src={heroMedia.video} type="video/mp4" />
-        </video>
+        />
       </div>
-      {blocked && (
+      {!playing && (
         <button className="home-video-play" type="button" onClick={play}>
           Play background video
         </button>
