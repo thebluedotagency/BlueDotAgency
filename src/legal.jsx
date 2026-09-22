@@ -6,7 +6,7 @@ const contact = (
     <br />
     Phone: <a href="tel:+17022921451">702-292-1451</a>
     <br />
-    Email: <a href="mailto:team@thebluedotagency.com">team@thebluedotagency.com</a>
+    Email: <a href="mailto:iris@thebluedotagency.com">iris@thebluedotagency.com</a>
   </>
 );
 const Section = ({title, children}) => (
@@ -128,7 +128,7 @@ function PrivacyPolicy() {
         </p>
         <p>
           You may request access, correction, or deletion by emailing{' '}
-          <a href="mailto:team@thebluedotagency.com?subject=Privacy%20request">team@thebluedotagency.com</a>. We may
+          <a href="mailto:iris@thebluedotagency.com?subject=Privacy%20request">iris@thebluedotagency.com</a>. We may
           need to verify your identity and may retain information where permitted or required by law. We will also
           communicate qualifying requests to applicable service providers.
         </p>
@@ -138,7 +138,7 @@ function PrivacyPolicy() {
           Nevada residents may submit a verified request concerning covered information and may direct us not to make a
           covered sale of covered information as defined by Nevada law. We do not currently sell covered information.
           Send requests to{' '}
-          <a href="mailto:team@thebluedotagency.com?subject=Nevada%20privacy%20request">team@thebluedotagency.com</a>.
+          <a href="mailto:iris@thebluedotagency.com?subject=Nevada%20privacy%20request">iris@thebluedotagency.com</a>.
         </p>
       </Section>
       <Section title="9. Security">

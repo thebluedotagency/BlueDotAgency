@@ -185,7 +185,7 @@ export function Homepage() {
           <a href="/contact">
             New business <span aria-hidden="true">↗</span>
           </a>
-          <a href="mailto:team@thebluedotagency.com">
+          <a href="mailto:iris@thebluedotagency.com">
             Email the studio <span aria-hidden="true">↗</span>
           </a>
         </div>

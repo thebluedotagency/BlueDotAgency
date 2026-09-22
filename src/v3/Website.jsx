@@ -87,7 +87,7 @@ function Footer() {
       </div>
       <div className="v3-footer-contact">
         <strong>Contact</strong>
-        <a href="mailto:team@thebluedotagency.com">team@thebluedotagency.com</a>
+        <a href="mailto:iris@thebluedotagency.com">iris@thebluedotagency.com</a>
         <a href="tel:+17022921451">702-292-1451</a>
         <span>Las Vegas, Nevada</span>
         <span>Working globally</span>
@@ -241,7 +241,7 @@ function Contact() {
     event.preventDefault();
     const data = new FormData(event.currentTarget);
     const body = `Name: ${data.get('name')}\nEmail: ${data.get('email')}\nBusiness: ${data.get('business')}\n\n${data.get('brief')}`;
-    window.location.href = `mailto:team@thebluedotagency.com?subject=${encodeURIComponent('A conversation about ' + data.get('business'))}&body=${encodeURIComponent(body)}`;
+    window.location.href = `mailto:iris@thebluedotagency.com?subject=${encodeURIComponent('A conversation about ' + data.get('business'))}&body=${encodeURIComponent(body)}`;
     setReady(true);
   }
   return (
@@ -258,7 +258,7 @@ function Contact() {
           <h2>Prefer to talk it through?</h2>
           <p>A conversation about the business and whether Blue Dot is the right fit.</p>
           <LinkButton href={bookingUrl}>Book a conversation</LinkButton>
-          <a href="mailto:team@thebluedotagency.com">team@thebluedotagency.com</a>
+          <a href="mailto:iris@thebluedotagency.com">iris@thebluedotagency.com</a>
         </div>
       </div>
       <form onSubmit={prepare}>
@@ -288,7 +288,7 @@ function Contact() {
         {ready && (
           <p role="status">
             Your email app has been requested. Nothing has been sent by this website. If it did not open, email
-            team@thebluedotagency.com directly.
+            iris@thebluedotagency.com directly.
           </p>
         )}
       </form>

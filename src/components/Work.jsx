@@ -54,7 +54,7 @@ export function Work() {
           </a>
         ))}
       </div>
-      <a className="proof-note reveal" href="mailto:team@thebluedotagency.com?subject=More%20Blue%20Dot%20work%20samples">
+      <a className="proof-note reveal" href="mailto:iris@thebluedotagency.com?subject=More%20Blue%20Dot%20work%20samples">
         DM us for more samples of past work. <ArrowUpRight />
       </a>
     </section>

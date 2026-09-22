@@ -24,7 +24,7 @@ export function Footer() {
         </div>
         <div>
           <p className="eyebrow">Contact</p>
-          <a href="mailto:team@thebluedotagency.com">team@thebluedotagency.com</a>
+          <a href="mailto:iris@thebluedotagency.com">iris@thebluedotagency.com</a>
           <a href="tel:+17022921451">702-292-1451</a>
           <span>Las Vegas, Nevada</span>
           <span>Working globally</span>
