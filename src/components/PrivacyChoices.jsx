@@ -9,7 +9,7 @@ export function PrivacyChoices() {
     if (choice === 'allow') loadOptionalServices();
   }, [choice]);
 
-  const choose = value => {
+  const choose = (value) => {
     saveConsent(value);
     if (choice === 'allow' && value === 'essential') {
       window.location.reload();
@@ -26,8 +26,8 @@ export function PrivacyChoices() {
           <div>
             <strong>Your privacy choice</strong>
             <p>
-              We use essential hosting and security technology. With your permission, we also load analytics.
-              You can use the website and booking links without analytics.
+              We use essential hosting and security technology. With your permission, we also load analytics. You can
+              use the website and booking links without analytics.
             </p>
             <div>
               <button onClick={() => choose('essential')}>Essential only</button>

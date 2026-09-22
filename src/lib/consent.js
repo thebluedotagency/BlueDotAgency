@@ -8,7 +8,7 @@ export const readConsent = () => {
   }
 };
 
-export const saveConsent = value => {
+export const saveConsent = (value) => {
   try {
     localStorage.setItem(consentKey, value);
   } catch {
