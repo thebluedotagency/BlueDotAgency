@@ -13,6 +13,8 @@ export default defineConfig({
         work: `${root}work/index.html`,
         fold: `${root}work/the-fold/index.html`,
         contact: `${root}contact/index.html`,
+        store: `${root}store/index.html`,
+        storeGuide: `${root}store/shot-guide/index.html`,
         privacyPolicy: `${root}privacy-policy/index.html`,
         termsAndConditions: `${root}terms-and-conditions/index.html`,
       },

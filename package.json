@@ -8,11 +8,12 @@
   },
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
+    "build": "node scripts/store/prerender.mjs && vite build",
     "preview": "vite preview",
     "lint": "eslint .",
     "format": "prettier --check .",
-    "format:write": "prettier --write ."
+    "format:write": "prettier --write .",
+    "dev:store": "node scripts/store/dev.mjs"
   },
   "dependencies": {
     "@vitejs/plugin-react": "^6.1.0",

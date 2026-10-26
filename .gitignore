@@ -2,3 +2,11 @@ node_modules/
 dist/
 .DS_Store
 *.log
+
+# Store local data and private deployment configuration
+.store-data/
+.store-test-*/
+.env
+.env.*
+!.env.example
+.vercel/
