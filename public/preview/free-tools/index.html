@@ -75,7 +75,7 @@ a{color:#2b68c9}
 <span class="pill" style="align-self: flex-start">Free prompt</span>
 <h2 style="font-size: 30px; font-weight: 800; letter-spacing: -.02em; margin: 0">Storytelling Coach</h2>
 <p style="font-size: 18px; line-height: 1.5; color: #2e3446; margin: 0">Paste it into Claude or ChatGPT. It asks you questions until you find your own true story. It never writes it for you.</p>
-<a class="btn" href="#storytelling" style="align-self: flex-start; margin-top: auto">Get the prompt</a>
+<a class="btn" href="#storytelling" data-gate="storytelling-prompt" data-gate-name="Storytelling Coach prompt" style="align-self: flex-start; margin-top: auto">Get the prompt</a>
 </div>
 </article>
 
@@ -85,7 +85,7 @@ a{color:#2b68c9}
 <span class="pill" style="align-self: flex-start">Free guide</span>
 <h2 style="font-size: 30px; font-weight: 800; letter-spacing: -.02em; margin: 0">AI business dictionary</h2>
 <p style="font-size: 18px; line-height: 1.5; color: #2e3446; margin: 0">Wireframe, MCP, webhook and 25 more words, each in one plain sentence. [PDF to make]</p>
-<a class="btn" href="#dictionary" style="align-self: flex-start; margin-top: auto">Send me the guide</a>
+<a class="btn" href="#dictionary" data-gate="ai-dictionary" data-gate-name="AI business dictionary" style="align-self: flex-start; margin-top: auto">Send me the guide</a>
 </div>
 </article>
 
@@ -99,7 +99,7 @@ a{color:#2b68c9}
 <p style="font-size: 18px; line-height: 1.45; margin: 0"><b>Air:</b> <span style="color: #2e3446">3 months free + unlimited generations through Dec 31</span></p>
 </div>
 <p style="font-size: 15px; color: #5a6275; margin: 0">I get a referral credit if you sign up through these links.</p>
-<a class="btn" href="#deals" style="align-self: flex-start; margin-top: auto">See the deals</a>
+<a class="btn" href="#deals" data-gate="ai-tool-deals" data-gate-name="AI tool deals" style="align-self: flex-start; margin-top: auto">See the deals</a>
 </div>
 </article>
 
@@ -108,8 +108,8 @@ a{color:#2b68c9}
 <div style="padding: 32px; display: flex; flex-direction: column; gap: 14px; flex: 1">
 <span class="pill" style="align-self: flex-start">Free guide</span>
 <h2 style="font-size: 30px; font-weight: 800; letter-spacing: -.02em; margin: 0">How to use automations</h2>
-<p style="font-size: 18px; line-height: 1.5; color: #2e3446; margin: 0">Find the task you repeat most, pick the trigger, and let it run. Step by step, with real examples from a real estate business. [Guide to write]</p>
-<a class="btn" href="#automations-guide" style="align-self: flex-start; margin-top: auto">Send me the guide</a>
+<p style="font-size: 18px; line-height: 1.5; color: #2e3446; margin: 0">Find the task you repeat most, pick the trigger, and let it run. Step by step, with real examples. [Guide to write]</p>
+<a class="btn" href="#automations-guide" data-gate="automations-guide" data-gate-name="How to use automations" style="align-self: flex-start; margin-top: auto">Send me the guide</a>
 </div>
 </article>
 
@@ -119,7 +119,7 @@ a{color:#2b68c9}
 <span class="pill" style="align-self: flex-start">Free guide</span>
 <h2 style="font-size: 30px; font-weight: 800; letter-spacing: -.02em; margin: 0">Create your first digital product</h2>
 <p style="font-size: 18px; line-height: 1.5; color: #2e3446; margin: 0">Templates, guides, workshops, AI tools. How to pick the one that solves a specific problem fast, costs little to keep running, and can turn into monthly income. [Guide to write]</p>
-<a class="btn" href="#products-guide" style="align-self: flex-start; margin-top: auto">Send me the guide</a>
+<a class="btn" href="#products-guide" data-gate="digital-products-guide" data-gate-name="Create your first digital product" style="align-self: flex-start; margin-top: auto">Send me the guide</a>
 </div>
 </article>
 
@@ -161,5 +161,56 @@ a{color:#2b68c9}
 </footer>
 
 </div>
+
+<!-- EMAIL GATE -->
+<div id="gate" role="dialog" aria-modal="true" aria-labelledby="gate-title" hidden style="position: fixed; inset: 0; z-index: 60; display: flex; align-items: center; justify-content: center; padding: 20px">
+<button type="button" data-gate-close aria-label="Close" style="position: absolute; inset: 0; border: 0; padding: 0; background: rgba(6,18,52,.5); -webkit-backdrop-filter: blur(4px); backdrop-filter: blur(4px); cursor: pointer"></button>
+<form id="gate-form" style="position: relative; width: 100%; max-width: 480px; background: #fff; border-radius: 28px; padding: 36px; box-shadow: 0 40px 100px rgba(6,18,52,.4); font-family: Inter, sans-serif">
+<button type="button" data-gate-close aria-label="Close" style="position: absolute; top: 16px; right: 16px; width: 44px; height: 44px; border-radius: 50%; border: 0; background: #f1f3f7; cursor: pointer; display: flex; align-items: center; justify-content: center"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0a0a0a" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+<div id="gate-ask">
+<p style="margin: 0 0 6px; font-size: 15px; font-weight: 600; color: #1d4f9e" id="gate-name"></p>
+<h2 id="gate-title" style="margin: 0 0 10px; font-size: 32px; font-weight: 800; letter-spacing: -.02em">Where should we send it?</h2>
+<p style="margin: 0 0 22px; font-size: 17px; line-height: 1.5; color: #2e3446">It lands in your inbox in a minute.</p>
+<label for="gate-first" style="display: block; font-size: 15px; font-weight: 600; margin-bottom: 6px">First name</label>
+<input id="gate-first" name="first_name" autocomplete="given-name" required style="width: 100%; min-height: 52px; border-radius: 14px; border: 1px solid rgba(16,40,90,.2); padding: 0 16px; font: 17px Inter, sans-serif; margin-bottom: 14px">
+<label for="gate-email" style="display: block; font-size: 15px; font-weight: 600; margin-bottom: 6px">Email</label>
+<input id="gate-email" name="email" type="email" autocomplete="email" required style="width: 100%; min-height: 52px; border-radius: 14px; border: 1px solid rgba(16,40,90,.2); padding: 0 16px; font: 17px Inter, sans-serif; margin-bottom: 18px">
+<button class="btn btn-blue" type="submit" style="width: 100%; font-family: Inter, sans-serif">Send it to me</button>
+<p style="margin: 14px 0 0; font-size: 14px; line-height: 1.5; color: #5a6275; text-align: center">You'll also get ASTRA, one automation idea a week. Unsubscribe anytime.</p>
+</div>
+<div id="gate-done" hidden>
+<h2 style="margin: 0 0 10px; font-size: 32px; font-weight: 800; letter-spacing: -.02em">Check your inbox.</h2>
+<p style="margin: 0 0 22px; font-size: 17px; line-height: 1.5; color: #2e3446">It's on the way. If you don't see it in 5 minutes, check your promotions folder.</p>
+<button class="btn" type="button" data-gate-close style="font-family: Inter, sans-serif">Back to free tools</button>
+</div>
+</form>
+</div>
+<script>
+(function () {
+  var gate = document.getElementById('gate'), form = document.getElementById('gate-form');
+  var ask = document.getElementById('gate-ask'), done = document.getElementById('gate-done');
+  var tool = null, opener = null;
+  document.querySelectorAll('[data-gate]').forEach(function (a) {
+    a.addEventListener('click', function (e) {
+      e.preventDefault();
+      tool = a.getAttribute('data-gate'); opener = a;
+      document.getElementById('gate-name').textContent = a.getAttribute('data-gate-name');
+      ask.hidden = false; done.hidden = true; gate.hidden = false;
+      document.getElementById('gate-first').focus();
+    });
+  });
+  function close() { gate.hidden = true; if (opener) opener.focus(); }
+  gate.querySelectorAll('[data-gate-close]').forEach(function (b) { b.addEventListener('click', close); });
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && !gate.hidden) close(); });
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    var data = { first_name: form.first_name.value, email: form.email.value, tag: 'free-tool:' + tool };
+    // TODO (Randy): POST `data` to the GHL inbound webhook for the "Free tools" workflow.
+    // That workflow tags the contact with data.tag, emails the right freebie, and adds them to ASTRA.
+    console.log('free tool signup', data);
+    ask.hidden = true; done.hidden = false;
+  });
+})();
+</script>
 </body>
 </html>
