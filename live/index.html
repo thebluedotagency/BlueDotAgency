@@ -1,0 +1,209 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Master These Skills | Blue Dot</title>
+    <meta
+      name="description"
+      content="44 skills people throw around in AI and business, explained in plain words. Free for Tech Alley entrepreneurs."
+    />
+    <meta name="robots" content="noindex,follow" />
+    <link rel="canonical" href="https://www.thebluedotagency.com/live" />
+    <link rel="icon" type="image/png" href="/assets/blue-dot/blue-dot-logo-exact.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&display=swap"
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="The Blue Dot Agency" />
+    <meta property="og:url" content="https://www.thebluedotagency.com/live" />
+    <meta property="og:title" content="Master These Skills: 44 skills in plain words" />
+    <meta property="og:description" content="AI, marketing, ops and more, minus the jargon." />
+    <meta property="og:image" content="https://www.thebluedotagency.com/og.png" />
+    <meta name="theme-color" content="#0c0d0f" />
+    <style>
+      :root {
+        --bg: #0c0d0f;
+        --ink: #f4f5f7;
+        --muted: #a9b0ba;
+        --ice: #8fd0ff;
+        --dot: #00a9df;
+      }
+      * { box-sizing: border-box; min-width: 0; }
+      html, body { margin: 0; }
+      body {
+        background:
+          radial-gradient(900px 680px at -10% -10%, rgba(51, 65, 85, 0.55), transparent 70%),
+          radial-gradient(900px 680px at 110% 110%, rgba(14, 116, 144, 0.4), transparent 70%),
+          var(--bg);
+        background-attachment: fixed;
+        color: var(--ink);
+        font: 17px/1.55 Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+        overflow-x: clip;
+      }
+      a { color: inherit; }
+      .top {
+        display: flex; align-items: center; justify-content: space-between;
+        max-width: 1120px; margin: 0 auto; padding: 22px 20px;
+      }
+      .brand { display: flex; align-items: center; gap: 10px; text-decoration: none; font-weight: 700; letter-spacing: -0.02em; }
+      .brand img { width: 34px; height: 34px; }
+      .top small { color: var(--muted); font-size: 14px; }
+
+      .hero { max-width: 720px; margin: 0 auto; padding: 12px 20px 56px; text-align: center; }
+      .welcome { margin: 0; color: var(--ice); font-weight: 500; font-size: 16px; }
+      h1 {
+        margin: 10px 0 0; font-weight: 800; font-size: clamp(40px, 9vw, 72px);
+        line-height: 1.02; letter-spacing: -0.045em; text-wrap: balance;
+      }
+      .sub { margin: 14px auto 0; max-width: 30em; color: #c4cad2; font-size: 18px; text-wrap: balance; }
+
+      .phone {
+        position: relative; margin: 28px auto 0;
+        width: max(190px, min(300px, 72vw, calc((100svh - 340px) / 2.17))); aspect-ratio: 9 / 19.5;
+        border-radius: 48px; padding: 11px;
+        background: linear-gradient(145deg, #2a2e35, #0f1114 55%, #23272d);
+        box-shadow: 0 0 0 1.5px #3a3f47, 0 40px 90px -20px rgba(0, 169, 223, 0.35), 0 30px 60px -30px #000;
+      }
+      .phone::after {
+        content: ''; position: absolute; top: 20px; left: 50%; transform: translateX(-50%);
+        width: 31%; height: 26px; border-radius: 20px; background: #000;
+      }
+      .screen {
+        width: 100%; height: 100%; border-radius: 38px; overflow: hidden; background: #000;
+        display: grid; place-items: center;
+      }
+      .screen video { width: 100%; height: 100%; object-fit: cover; display: block; }
+      .screen .fallback { width: 38%; opacity: 0.85; }
+
+      .cta {
+        display: inline-flex; align-items: center; justify-content: center; gap: 10px;
+        margin-top: 26px; min-height: 58px; padding: 0 34px; border: 0; border-radius: 999px;
+        background: var(--ink); color: var(--bg); font: 700 18px Inter, sans-serif; cursor: pointer;
+        box-shadow: 0 0 0 6px rgba(143, 208, 255, 0.12), 0 12px 40px -10px rgba(0, 169, 223, 0.6);
+        transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+      }
+      .cta:hover { transform: translateY(-2px); }
+      .cta:focus-visible { outline: 3px solid var(--ice); outline-offset: 4px; }
+      .fine { margin: 12px 0 0; color: var(--muted); font-size: 14px; }
+
+      .signup {
+        display: none; margin: 28px auto 0; max-width: 520px; padding: 8px;
+        background: #fff; border-radius: 20px; box-shadow: 0 30px 80px -30px rgba(0, 0, 0, 0.8);
+      }
+      .signup.open { display: block; }
+      .signup iframe { width: 100%; height: 460px; border: 0; border-radius: 14px; display: block; }
+
+      .inside { max-width: 720px; margin: 0 auto; padding: 8px 20px 72px; }
+      .card { background: #fff; color: #0c0d0f; border-radius: 22px; padding: clamp(24px, 5vw, 44px); }
+      .card h2 { margin: 0; font-size: 26px; letter-spacing: -0.02em; }
+      .list { list-style: none; margin: 22px 0 0; padding: 0; display: grid; gap: 18px; }
+      .list li { display: grid; grid-template-columns: 30px 1fr; gap: 14px; align-items: start; }
+      .num {
+        width: 30px; height: 30px; border-radius: 50%; background: var(--dot); color: #0c0d0f;
+        display: grid; place-items: center; font-weight: 700; font-size: 14px; margin-top: 1px;
+      }
+      .list b { font-size: 18px; }
+      .list b span { font-weight: 400; font-size: 14px; color: #5b636e; margin-left: 6px; white-space: nowrap; }
+      .list p { margin: 2px 0 0; font-size: 15px; color: #2b3138; }
+      .try { margin-top: 26px; background: #f4f5f7; border-radius: 14px; padding: 22px 24px; }
+      .try .k { margin: 0; font-size: 22px; font-weight: 700; }
+      .try .s { margin: 0; font-size: 14px; color: #5b636e; font-weight: 500; }
+      .try p { margin: 10px 0 0; font-size: 16px; color: #2b3138; }
+      .try .like { margin-top: 8px; color: #0077a8; font-weight: 700; }
+
+      footer { text-align: center; padding: 0 20px 48px; color: var(--muted); font-size: 14px; }
+      footer a { color: var(--ice); text-decoration: none; }
+
+      @media (min-width: 900px) {
+        .hero { padding-top: 24px; }
+      }
+      @media (prefers-reduced-motion: reduce) {
+        .cta { transition: none; }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="top">
+      <a class="brand" href="/"><img src="/assets/blue-dot/blue-dot-mark.svg" alt="" width="34" height="34" />Blue Dot</a>
+      <small>Tech Alley Las Vegas</small>
+    </header>
+
+    <main>
+      <section class="hero" aria-labelledby="title">
+        <p class="welcome">Welcome, Tech Alley entrepreneurs</p>
+        <h1 id="title">Master these skills</h1>
+        <p class="sub">44 skills people throw around in AI and business, explained in plain words.</p>
+
+        <div class="phone">
+          <div class="screen">
+            <video
+              src="/assets/live/master-these-skills.mp4"
+              poster="/assets/live/master-these-skills-poster.jpg"
+              autoplay muted loop playsinline preload="metadata"
+              aria-label="Iris's Instagram reel: master these skills"
+            ></video>
+          </div>
+        </div>
+
+        <button class="cta" type="button" id="get" aria-controls="signup" aria-expanded="false">Get the free list</button>
+        <p class="fine">Free. Straight to your inbox.</p>
+
+        <div class="signup" id="signup"></div>
+      </section>
+
+      <section class="inside" aria-labelledby="inside-title">
+        <div class="card">
+          <h2 id="inside-title">What's inside</h2>
+          <ul class="list">
+            <li><span class="num">1</span><div><b>AI<span>9 skills</span></b><p>RAG, MCP, evals and more</p></div></li>
+            <li><span class="num">2</span><div><b>Communication<span>8 skills</span></b><p>Framing, steelmanning, the pregnant pause</p></div></li>
+            <li><span class="num">3</span><div><b>Running your own business<span>9 skills</span></b><p>Leverage, offer design, unit economics</p></div></li>
+            <li><span class="num">4</span><div><b>Marketing<span>10 skills</span></b><p>ICP, hooks, AEO and GEO</p></div></li>
+            <li><span class="num">5</span><div><b>Operations<span>8 skills</span></b><p>KPIs, SOPs, bottlenecks</p></div></li>
+          </ul>
+          <div class="try">
+            <p class="k">MCP</p>
+            <p class="s">Model Context Protocol</p>
+            <p>A standard way to plug AI into your apps, like Gmail, your calendar or your CRM.</p>
+            <p class="like">Like a USB port for AI.</p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      Iris Tsui / <a href="/">thebluedotagency.com</a> / <a href="https://www.instagram.com/irisdtsui/">@irisdtsui</a> /
+      <a href="/privacy-policy">Privacy</a>
+    </footer>
+
+    <script>
+      {
+        // GHL form that tags the contact and sends the "Master These Skills" guide email.
+        const FORM_URL = 'https://api.leadconnectorhq.com/widget/form/REPLACE_WITH_FORM_ID';
+        const btn = document.getElementById('get');
+        const box = document.getElementById('signup');
+        btn.addEventListener('click', () => {
+          if (!box.firstChild) {
+            const f = document.createElement('iframe');
+            f.src = FORM_URL;
+            f.title = 'Get the free list';
+            box.appendChild(f);
+          }
+          box.classList.add('open');
+          btn.setAttribute('aria-expanded', 'true');
+          box.scrollIntoView({behavior: 'smooth', block: 'center'});
+        });
+        const v = document.querySelector('.screen video');
+        v.addEventListener('error', () => {
+          v.replaceWith(Object.assign(document.createElement('img'), {
+            src: '/assets/blue-dot/blue-dot-mark.svg', alt: '', className: 'fallback',
+          }));
+        }, true);
+      }
+    </script>
+  </body>
+</html>
