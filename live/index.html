@@ -69,19 +69,19 @@
         box-shadow: 0 0 0 1.5px #3a3f47, 0 40px 90px -20px rgba(0, 169, 223, 0.35), 0 30px 60px -30px #000;
       }
       .phone::after {
-        content: ''; position: absolute; top: 20px; left: 50%; transform: translateX(-50%);
-        width: 31%; height: 26px; border-radius: 20px; background: #000;
+        content: ''; position: absolute; top: 11px; left: 50%; transform: translateX(-50%);
+        width: 42%; height: 24px; border-radius: 0 0 16px 16px; background: #000; z-index: 2;
       }
       .screen {
-        width: 100%; height: 100%; border-radius: 38px; overflow: hidden; background: #000;
-        display: grid; place-items: center;
+        position: relative; width: 100%; height: 100%; border-radius: 38px; overflow: hidden; background: #000;
+        display: flex; flex-direction: column;
       }
-      .screen video { width: 100%; height: auto; aspect-ratio: 9 / 16; object-fit: cover; display: block; }
-      .reel { position: relative; width: 100%; }
-      .reel::after {
-        content: ''; position: absolute; inset: 0; pointer-events: none;
-        background: linear-gradient(to bottom, transparent 58%, rgba(0, 0, 0, 0.92) 80%, #000 87%);
+      .status {
+        flex: none; height: 30px; padding: 0 20px 0 26px; display: flex; align-items: center; justify-content: space-between;
+        background: #6f7fb8; color: #fff; font: 600 12px Inter, sans-serif;
       }
+      .status svg { height: 10px; width: auto; display: block; }
+      .screen video { flex: 1; width: 100%; min-height: 0; object-fit: cover; object-position: top; display: block; }
 
       .cta {
         display: inline-flex; align-items: center; justify-content: center; gap: 10px;
@@ -92,6 +92,11 @@
       }
       .cta:hover { transform: translateY(-2px); }
       .cta:focus-visible { outline: 3px solid var(--ice); outline-offset: 4px; }
+      .proof { margin: 22px auto 0; max-width: 24em; font-size: 17px; color: #c4cad2; text-wrap: balance; }
+      .proof b { color: var(--ink); }
+      .followme { margin: 12px 0 0; display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 6px 16px; color: var(--muted); font-size: 15px; }
+      .followme a { color: var(--ice); text-decoration: none; padding: 6px 0; }
+      .followme a:hover, .followme a:focus-visible { text-decoration: underline; }
       .fine { margin: 12px 0 0; color: var(--muted); font-size: 14px; }
 
       .signup {
@@ -119,16 +124,6 @@
       .try p { margin: 10px 0 0; font-size: 16px; color: #2b3138; }
       .try .like { margin-top: 8px; color: #0077a8; font-weight: 700; }
 
-      .follow { max-width: 720px; margin: 0 auto; padding: 0 20px 64px; text-align: center; }
-      .follow h2 { margin: 0; font-size: clamp(24px, 5vw, 30px); letter-spacing: -0.02em; text-wrap: balance; }
-      .follow h2 span { color: var(--ice); }
-      .socials { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; margin-top: 22px; }
-      .socials a {
-        display: inline-flex; align-items: center; min-height: 48px; padding: 0 24px; border-radius: 999px;
-        border: 1px solid rgba(244, 245, 247, 0.22); text-decoration: none; font-weight: 500; font-size: 16px;
-      }
-      .socials a:hover, .socials a:focus-visible { border-color: var(--ice); color: var(--ice); outline: none; }
-
       footer { text-align: center; padding: 0 20px 48px; color: var(--muted); font-size: 14px; }
       footer a { color: var(--ice); text-decoration: none; }
 
@@ -154,15 +149,23 @@
 
         <div class="phone">
           <div class="screen">
-            <div class="reel"><video
+            <div class="status"><span>9:41</span><svg viewBox="0 0 46 12" aria-hidden="true"><g fill="#fff"><rect x="0" y="8" width="3" height="4" rx="1"/><rect x="4.5" y="6" width="3" height="6" rx="1"/><rect x="9" y="3.5" width="3" height="8.5" rx="1"/><rect x="13.5" y="1" width="3" height="11" rx="1"/><rect x="24" y="1" width="19" height="10" rx="3" fill="none" stroke="#fff" stroke-width="1.2"/><rect x="26" y="3" width="13" height="6" rx="1.5"/><rect x="44" y="4" width="1.6" height="4" rx=".8"/></g></svg></div>
+            <video
               src="/assets/live/master-these-skills.mp4"
               poster="/assets/live/master-these-skills-poster.jpg"
               width="720" height="1280"
               autoplay muted loop playsinline preload="auto"
               aria-label="Iris's reel: master these skills"
-            ></video></div>
+            ></video>
           </div>
         </div>
+
+        <p class="proof">Check out the video that got <b>80,000 views</b> and <b>6,800 saves</b> on Instagram</p>
+        <p class="followme">Follow me:
+          <a href="https://www.instagram.com/irisdtsui/" target="_blank" rel="noopener">@irisdtsui</a>
+          <a href="https://www.linkedin.com/in/iristsui1/" target="_blank" rel="noopener">LinkedIn</a>
+          <a href="https://www.facebook.com/profile.php?id=61589153195013" target="_blank" rel="noopener">Facebook</a>
+        </p>
 
         <button class="cta" type="button" id="get" aria-controls="signup" aria-expanded="false">Get the free list</button>
         <p class="fine">Free. Straight to your inbox.</p>
@@ -186,13 +189,6 @@
             <p>A standard way to plug AI into your apps, like Gmail, your calendar or your CRM.</p>
             <p class="like">Like a USB port for AI.</p>
           </div>
-        </div>
-      </section>
-      <section class="follow" aria-labelledby="follow-title">
-        <h2 id="follow-title">Follow along <span>so we can build together.</span></h2>
-        <div class="socials">
-          <a href="https://www.instagram.com/irisdtsui/" target="_blank" rel="noopener">Instagram</a>
-          <a href="https://www.linkedin.com/in/iristsui1" target="_blank" rel="noopener">LinkedIn</a>
         </div>
       </section>
     </main>
