@@ -76,9 +76,12 @@
         width: 100%; height: 100%; border-radius: 38px; overflow: hidden; background: #000;
         display: grid; place-items: center;
       }
-      .screen { background: #fff; }
-      .screen iframe { width: 100%; height: 100%; border: 0; display: block; }
-      .screen .fallback { width: 38%; opacity: 0.85; }
+      .screen video { width: 100%; height: auto; aspect-ratio: 9 / 16; object-fit: cover; display: block; }
+      .reel { position: relative; width: 100%; }
+      .reel::after {
+        content: ''; position: absolute; inset: 0; pointer-events: none;
+        background: linear-gradient(to bottom, transparent 58%, rgba(0, 0, 0, 0.92) 80%, #000 87%);
+      }
 
       .cta {
         display: inline-flex; align-items: center; justify-content: center; gap: 10px;
@@ -151,12 +154,13 @@
 
         <div class="phone">
           <div class="screen">
-            <iframe
-              src="https://www.instagram.com/reel/Df8Ao6fz8Pr/embed/"
-              title="Iris's Instagram reel: master these skills"
-              loading="eager" scrolling="no" allowtransparency="true"
-              allow="autoplay; encrypted-media; picture-in-picture"
-            ></iframe>
+            <div class="reel"><video
+              src="/assets/live/master-these-skills.mp4"
+              poster="/assets/live/master-these-skills-poster.jpg"
+              width="720" height="1280"
+              autoplay muted loop playsinline preload="auto"
+              aria-label="Iris's reel: master these skills"
+            ></video></div>
           </div>
         </div>
 
