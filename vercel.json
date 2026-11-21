@@ -2,5 +2,12 @@
   "buildCommand": "npm run build",
   "outputDirectory": "dist",
   "cleanUrls": true,
-  "trailingSlash": false
+  "trailingSlash": false,
+  "redirects": [
+    {
+      "source": "/live",
+      "destination": "/skills",
+      "permanent": false
+    }
+  ]
 }
