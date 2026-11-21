@@ -63,8 +63,8 @@
 
       .phone {
         position: relative; margin: 28px auto 0;
-        width: max(190px, min(300px, 72vw, calc((100svh - 340px) / 2.17))); aspect-ratio: 9 / 19.5;
-        border-radius: 48px; padding: 11px;
+        width: max(200px, min(310px, 74vw, calc((100svh - 330px) / 1.97)));
+        border-radius: 46px; padding: 10px;
         background: linear-gradient(145deg, #2a2e35, #0f1114 55%, #23272d);
         box-shadow: 0 0 0 1.5px #3a3f47, 0 40px 90px -20px rgba(0, 169, 223, 0.35), 0 30px 60px -30px #000;
       }
@@ -73,15 +73,16 @@
         width: 42%; height: 24px; border-radius: 0 0 16px 16px; background: #000; z-index: 2;
       }
       .screen {
-        position: relative; width: 100%; height: 100%; border-radius: 38px; overflow: hidden; background: #000;
+        position: relative; width: 100%; aspect-ratio: 720 / 1416; border-radius: 36px; overflow: hidden; background: #000;
         display: flex; flex-direction: column;
       }
       .status {
-        flex: none; height: 30px; padding: 0 20px 0 26px; display: flex; align-items: center; justify-content: space-between;
-        background: #6f7fb8; color: #fff; font: 600 12px Inter, sans-serif;
+        position: absolute; top: 0; left: 0; right: 0; z-index: 1; height: 30px; padding: 0 20px 0 26px;
+        display: flex; align-items: center; justify-content: space-between;
+        color: #fff; font: 600 12px Inter, sans-serif; text-shadow: 0 1px 2px rgba(0, 0, 0, 0.25);
       }
       .status svg { height: 10px; width: auto; display: block; }
-      .screen video { flex: 1; width: 100%; min-height: 0; object-fit: cover; object-position: top; display: block; }
+      .screen video { width: 100%; height: 100%; object-fit: cover; display: block; }
 
       .cta {
         display: inline-flex; align-items: center; justify-content: center; gap: 10px;
@@ -153,7 +154,7 @@
             <video
               src="/assets/live/master-these-skills.mp4"
               poster="/assets/live/master-these-skills-poster.jpg"
-              width="720" height="1280"
+              width="720" height="1416"
               autoplay muted loop playsinline preload="auto"
               aria-label="Iris's reel: master these skills"
             ></video>
