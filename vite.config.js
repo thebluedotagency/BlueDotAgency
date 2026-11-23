@@ -14,6 +14,7 @@ export default defineConfig({
         fold: `${root}work/the-fold/index.html`,
         contact: `${root}contact/index.html`,
         skills: `${root}skills/index.html`,
+        startupSkills: `${root}startup-skills/index.html`,
         store: `${root}store/index.html`,
         storeGuide: `${root}store/shot-guide/index.html`,
         privacyPolicy: `${root}privacy-policy/index.html`,
