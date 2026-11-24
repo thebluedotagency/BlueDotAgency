@@ -15,6 +15,7 @@ export default defineConfig({
         contact: `${root}contact/index.html`,
         skills: `${root}skills/index.html`,
         startupSkills: `${root}startup-skills/index.html`,
+        starterKit: `${root}starter-kit/index.html`,
         store: `${root}store/index.html`,
         storeGuide: `${root}store/shot-guide/index.html`,
         privacyPolicy: `${root}privacy-policy/index.html`,
